@@ -1,0 +1,9 @@
+I want to create a site that players can write notes for their dnd campaigns.
+I will have the user register, log in.
+They can then create a campaign, or open up an already existing campaign.
+From inside that campaign they have a few different tabs to work with.
+A main notes tab where they write notes.
+An NPC tab where they can create NPC's that they can delete, update along the campaign.
+They have the quest tab that keeps track of their quests.
+and of course they have treasure tab where all the parties treasure will be held until it is distributed.
+I would love to be able to deploy this site online so people are able to use it once I am done and I can update it and give it other features. 
