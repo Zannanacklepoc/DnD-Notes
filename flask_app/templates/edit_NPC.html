@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+    <title>Document</title>
+    <style>
+        .nav-tabs .nav-link {
+            color: red;
+            border: 2px solid black;
+            font-weight: bold; /* Change tab link color to red */
+            
+        }
+        .nav-tabs .nav-link.active {
+            background-color: #171716; /* Optional: Change background of active tab */
+            color: red;
+            border: 2px solid black; /* Ensure active tab text color is also red */
+        }
+        .text {
+            color: rgb(15, 14, 13); /* Change link color to gold */
+            font-weight: bold; /* Make the links bold */
+        }
+    </style>
+</head>
+<body>
+    <body class="p-3 mb-2 bg-dark-subtle text-dark-emphasis">
+        <div class="container mt-4">
+            <div class="d-flex align-items-center">
+                <h1 class="display-4 fw-bold me-3">Welcome to DnD Notes!!</h1>
+                <p class="fs-3 fw-bold me-3 mb-0">{{ session['first_name'] }} {{ session['last_name'] }}</p>
+                <a href="/" class="text me-3">Logout</a>
+                <a href="/dashboard" class="text">Back to Campaigns</a>
+            </div>
+        </div>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/notes">Notes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/dashboard/NPC">NPC's</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/Quests">Quests</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/Party_treasure">Party Treasure</a>
+        </li>
+    </ul>
+    <h1>Update your NPC</h1>
+    <div class="container mt-5">
+        <h2 class="mb-4">Edit NPC</h2>
+        <form action="/Edit/{{npc.id}}" method="post">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="Name" value="{{npc.Name}}" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="Race" class="form-label">Race</label>
+                <input type="text" class="form-control" name="Race" value="{{npc.Race}}" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="Class" class="form-label">Class</label>
+                <input type="text" class="form-control" name="Class" value="{{npc.Class}}" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" name="location" value="{{npc.location}}" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="small_discription" class="form-label">Description</label>
+                <textarea class="form-control" name="small_discription" rows="4" required>{{npc.small_discription}}</textarea>
+            </div>
+    
+            <button type="submit" class="btn btn-danger">Submit</button>
+            <a href="/dashboard/NPC" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
